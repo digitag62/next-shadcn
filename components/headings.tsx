@@ -1,14 +1,17 @@
-"use client"
+"use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import { ThemeToggle } from "@/components/theme-toggle";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 export default function Headings() {
-  const route = usePathname();
-
   return (
     <div className="container py-6 flex justify-between">
       <NavigationMenu>

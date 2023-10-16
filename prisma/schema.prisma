@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Expenses {
+  id          String   @id
+  createdAt   DateTime @default(now())
+  updateAt    DateTime
+  dateExpense DateTime @default(now())
+  category    Category @default(FOOD)
+  amount      Float
+  comment     String?
+}
+
+enum Category {
+  FOOD
+  TRANSPORT
+  HOUSING
+  ENTERTAINMENT
+  DEBT
+  SAVINGS
+  WELLNESS
+}
+
+model Todos {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  remarks   String
+}
