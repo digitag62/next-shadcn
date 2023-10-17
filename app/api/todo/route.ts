@@ -19,10 +19,8 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  console.log('delete guest cart offer');
   try {
     const {id} = await req.json();
-    console.log(id);
     
     const deleteUser = await prismadb.todos.delete({
       where: {id: id},
